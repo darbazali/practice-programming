@@ -91,7 +91,25 @@ const sockMerchant = (arr) => {
     return count;
 }
 
+
+// method 2
+const sockMerchant2 = (arr) => {
+
+    // socks holder
+    let socks = {}
+    let pairs = 0; // color pairs
+
+    for ( let item of arr ) {
+        socks[item] = socks[item] + 1 || 1;
+        if ( socks[item] % 2 == 0 ) pairs += 1;
+    }
+    
+    return pairs;
+
+}
+
 const arr = [10, 20 ,20, 10, 10, 30, 50, 10, 20];
 
 console.log(sockMerchant(arr));
+console.log(sockMerchant2(arr));
 
