@@ -1,7 +1,8 @@
 
+console.clear()
 
-// given a number, the func should return next multiple of 5 of this number
-
+// Grading Students Algorithm
+// link: https://www.hackerrank.com/challenges/grading/problem
 
 
 const gradingStudents = grades => {
@@ -10,11 +11,10 @@ const gradingStudents = grades => {
     // given a number, should return a number that is
     // the next muliple of 5
     const nextMultipleOfFive = number => {
-
         // create a loop between number and 100, <= 0 number <= 100
         for ( let i = number; i <= 100, i++;) {
             // if number is divisible by 5 or one, return this number
-            if ( i % 5 == 0 || i % 1 == 1) {
+            if ( i % 5 === 0) {
                 return i;
             }
         }
