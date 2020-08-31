@@ -1,4 +1,6 @@
 
+
+// given a number, the func should return next multiple of 5 of this number
 const nextMultipleOfFive = number => {
     for ( let i = number; i <= 100, i++;) {
         if ( i % 5 == 0 || i % 1 == 1) {
@@ -6,25 +8,39 @@ const nextMultipleOfFive = number => {
         }
     }
 }
+
+
 const gradingStudents = grades => {
     
-    let result = [];
+//     let result = [];
 
-    for ( let item in grades ) {
-        let grade = grades[item];
+//     grades.forEach(item => {
+//         // if item < 38, return item
+//         if ( item < 38 ) {
+//             result.push(item);
+//         }
+//     });
 
-        // if grade - next x5 < 3 => grade - next x5
+//     return result;
 
-
-        if ( grade < 38 ) {
-            result.push(grade);
+    return grades.map( item => {
+        if ( item >= 38 && (nextMultipleOfFive(item) - item < 3)) {
+            return item = nextMultipleOfFive(item)
         }
-    }
-    return result;
+
+        if ( item >= 38 && ( nextMultipleOfFive(item) - item >= 3 )) {
+            return item = item;
+        }
+        else {
+            return item
+        }
+    })
 }
 
 const arr = [73, 67, 38, 33];
+console.clear();
 console.log(gradingStudents(arr));  // should return 75 67 40 33
 
-console.log(nextMultipleOfFive(73))
-console.log(nextMultipleOfFive(38))
+// console.log(nextMultipleOfFive(73))
+// console.log(nextMultipleOfFive(67))
+// console.log(nextMultipleOfFive(38))
